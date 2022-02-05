@@ -1,16 +1,21 @@
-# weatherappmine
+# Weather App
 
-A new Flutter project.
+This application is my first own project.
+I find a ui design from Dribble and i tried made that ui.
 
-## Getting Started
+[For UI Click Here](https://dribbble.com/shots/15342976-Weather-forecast-Mobile-App-Deisign)
 
-This project is a starting point for a Flutter application.
+This is my first project so i still don't know bloc,getx, mvvm etc.
 
-A few resources to get you started if this is your first Flutter project:
+I used these packages:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+http
+geolocator
+rive
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## IMAGE
+
+![alt text](https://imgyukle.com/f/2022/02/05/o6ltHj.png)
+
+![alt text](http://url/to/img.png)
