@@ -16,5 +16,5 @@ rive
 
 ## IMAGE
 
-![alt text](https://imgyukle.com/f/2022/02/05/o6tJQe.png)
-![alt text](https://imgyukle.com/f/2022/02/05/o6tQgN.png)
+![alt text](https://i.hizliresim.com/nh0k26w.png)
+![alt text](https://i.hizliresim.com/3ccbqik.png)
