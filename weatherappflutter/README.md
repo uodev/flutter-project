@@ -16,5 +16,5 @@ rive
 
 ## IMAGE
 
-![alt text](https://i.hizliresim.com/nh0k26w.png)
-![alt text](https://i.hizliresim.com/3ccbqik.png)
+![alt text](https://i.hizliresim.com/lge149f.png)
+![alt text](https://i.hizliresim.com/fq2le1r.png)
