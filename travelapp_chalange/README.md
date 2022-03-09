@@ -7,9 +7,13 @@ This application made for our ui chalange
 #I used these packages:
 
   flutter_svg: ^1.0.3 
+  
   introduction_screen: ^3.0.0
+  
   ionicons: ^0.1.2
+  
   curved_navigation_bar: ^1.0.3
+  
 
 # IMAGE
 
