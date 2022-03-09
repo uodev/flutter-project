@@ -15,5 +15,5 @@ I used these packages:
 ## IMAGE
 
 ![alt text](https://i.hizliresim.com/ll746xx.png)
-![alt text](https://i.hizliresim.com/ll746xx.png)
-![alt text](https://i.hizliresim.com/ll746xx.png)
+![alt text](https://i.hizliresim.com/8a7ng9l.png)
+![alt text](https://i.hizliresim.com/qgr4qgf.png)
