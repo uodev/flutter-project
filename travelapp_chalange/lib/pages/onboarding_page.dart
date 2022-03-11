@@ -11,12 +11,23 @@ class OnBoardingPage extends StatefulWidget {
   State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _OnBoardingPageState extends State<OnBoardingPage> {
+class _OnBoardingPageState extends State<OnBoardingPage>
+    with TickerProviderStateMixin {
+  //BTN ANIMATION
+  late AnimationController animationControllerHeight;
+  late AnimationController animationControllerWidth;
+  late AnimationController animationControllerTextSize;
+
+  int animTime = 400;
+
   int currentIndex = 0;
   PageController? _controller;
   @override
   void initState() {
     _controller = PageController(initialPage: 0);
+
+    animationControllerFuncBTN();
+
     super.initState();
   }
 
@@ -81,7 +92,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
           const SizedBox(height: 30.0),
           Container(
-            child: currentIndex == contents.length - 1 ? skipButton() : null,
+            child: currentIndex == contents.length - 1
+                ? skipButton()
+                : emptyObject(),
           ),
           const SizedBox(height: 30.0),
         ],
@@ -89,30 +102,53 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  ElevatedButton skipButton() {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (_) => const HomePage()),
-            (route) => false);
-      },
-      child: const Text(
-        'Get Started\t->',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18.0,
-          fontFamily: 'Technasans',
+  Container emptyObject() {
+    animationControllerWidth.reset();
+    animationControllerHeight.reset();
+    animationControllerTextSize.reset();
+    return Container();
+  }
+
+  SizedBox skipButton() {
+    animationControllerWidth.forward();
+    animationControllerHeight.forward();
+    animationControllerTextSize.forward();
+
+    animationControllerTextSize.addListener(() {
+      setState(() {});
+    });
+
+    animationControllerWidth.addListener(() {
+      setState(() {});
+    });
+    return SizedBox(
+      height: animationControllerHeight.value,
+      width: animationControllerWidth.value,
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (_) => const HomePage()),
+              (route) => false);
+        },
+        child: Text(
+          'Get Started\t->',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: animationControllerTextSize.value,
+            fontFamily: 'Technasans',
+          ),
         ),
-      ),
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        )),
-        elevation: MaterialStateProperty.all(15),
-        minimumSize: MaterialStateProperty.all(const Size(200, 45)),
-        shadowColor: MaterialStateProperty.all(Colors.orange.shade800),
-        backgroundColor: MaterialStateProperty.all(kOrangeColorUI),
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          )),
+          elevation: MaterialStateProperty.all(15),
+          // minimumSize: MaterialStateProperty.all(Size(
+          //     animationControllerHight.value, animationControllerWidth.value)),
+          shadowColor: MaterialStateProperty.all(Colors.orange.shade800),
+          backgroundColor: MaterialStateProperty.all(kOrangeColorUI),
+        ),
       ),
     );
   }
@@ -126,6 +162,26 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         borderRadius: BorderRadius.circular(20),
         color: kOrangeColorUI,
       ),
+    );
+  }
+
+  void animationControllerFuncBTN() {
+    animationControllerHeight = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: animTime),
+      upperBound: 45,
+    );
+
+    animationControllerWidth = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: animTime),
+      upperBound: 200,
+    );
+
+    animationControllerTextSize = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+      upperBound: 18.0,
     );
   }
 }
